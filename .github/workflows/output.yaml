@@ -1,13 +1,13 @@
 name: Output workflow information
-on: workflow_dispatch
+on: issues
 jobs:
-  process_issue:
+  output-info:
     runs-on: ubuntu-latest
     steps:
       - name: Output Github context
         run: |
           echo "Issue number: ${{ toJson(github.event.issue.number) }}"
           echo "Issue title: ${{ toJson(github.event.issue.title) }}"
-          echo "Issue body: ${{ toJson(github.event.issue.bod) }}"
+          echo "Issue body: ${{ toJson(github.event.issue.body) }}"
           echo "Issue state: ${{ toJson(github.event.issue.state) }}"
           echo "Issue author: ${{ toJson(github.event.issue.user.login) }}"
